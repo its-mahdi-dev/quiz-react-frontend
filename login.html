@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="pt-32">
+		<div
+			class="card lg:w-8/12 w-10/12 mx-auto bg-gray-700 bg-opacity-30 backdrop-blur-xl p-4 rounded-xl dir-rtl"
+		>
+			<h1 class="font-fedra text-center text-3xl">همبند</h1>
+			<form
+				action=""
+				class="mt-8"
+			>
+				<div class="flex flex-wrap">
+					<div
+						class="lg:w-1/2 w-full lg:pe-1 mt-2"
+					>
+						<Input
+							bind:val={first_name}
+							label="نام"
+							validations={{ required: true }}						/>
+					</div>
+					<div
+						class="lg:w-1/2 w-full lg:ps-1 mt-2"
+					>
+						<Input
+							bind:val={last_name}
+							label="نام خانوادگی"
+							validations={{ min: '4', required: true }}
+						/>
+					</div>
+					<button
+						class="w-full rounded-lg bg-gradient-to-t from-purple-700 to-purple-500 h-12 mt-4 flex items-center justify-center"
+						type="subnit"
+					>
+						ذخیره
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
