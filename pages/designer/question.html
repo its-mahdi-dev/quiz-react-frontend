@@ -1,0 +1,249 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوالات</title>
+    <link rel="stylesheet" href="/assets/css/lib/daisyui.min.css">
+    <script src="/assets/js/lib/tailwind.min.js"></script>
+    <script src="/assets/js/config.js"></script>
+    <link rel='stylesheet' href='/assets/css/lib/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='/assets/css/lib/uicons-solid-rounded.css'>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <div class="p-3">
+        <div class="w-11/12 mx-auto my-3">
+            <div class="accordion-custom bg-gray-38 rounded-xl transition-all duration-300 p-3 overflow-hidden">
+                <input type="checkbox" name="" class="hidden" id="create-question">
+                <label for="create-question" class="p-4 block text-xl cursor-pointer">ایجاد سوال</label>
+                <div class="accordion-body transition-all duration-300 max-h-0 overflow-hidden pt-3">
+                    <form action="create" class="flex flex-wrap">
+                        <div class="w-full lg:pe-1 mt-2 check-input relative">
+                            <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
+                            <div
+                                class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                <input type="text" data-validations="required" class="text-input" />
+                                <label>نام سوال </label>
+                                <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
+                                <i class="fi fi-sr-exclamation -text-error hidden success-icon"></i>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 w-full lg:pr-10 pr-3 mt-4">
+                            <div class="lg:pe-1 mt-2 check-input relative">
+                                <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
+                                <div class="flex items-center">
+                                    <input type="radio" name="radio-5" class="radio radio-success ml-2" />
+                                    <div
+                                        class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                        <input type="text" data-validations="required" class="text-input" />
+                                        <label>گزینه یک</label>
+                                        <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
+                                        <i class="fi fi-sr-exclamation -text-error hidden success-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:pe-1 mt-2 check-input relative">
+                                <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
+                                <div class="flex items-center">
+                                    <input type="radio" name="radio-5" class="radio radio-success ml-2" />
+                                    <div
+                                        class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                        <input type="text" data-validations="required" class="text-input" />
+                                        <label>گزینه دو</label>
+                                        <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
+                                        <i class="fi fi-sr-exclamation -text-error hidden success-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:pe-1 mt-2 check-input relative">
+                                <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
+                                <div class="flex items-center">
+                                    <input type="radio" name="radio-5" class="radio radio-success ml-2" />
+                                    <div
+                                        class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                        <input type="text" data-validations="required" class="text-input" />
+                                        <label>گزینه سه</label>
+                                        <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
+                                        <i class="fi fi-sr-exclamation -text-error hidden success-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:pe-1 mt-2 check-input relative">
+                                <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
+                                <div class="flex items-center">
+                                    <input type="radio" name="radio-5" class="radio radio-success ml-2" />
+                                    <div
+                                        class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                        <input type="text" data-validations="required" class="text-input" />
+                                        <label>گزینه چهار</label>
+                                        <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
+                                        <i class="fi fi-sr-exclamation -text-error hidden success-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="lg:w-1/2 w-full lg:pe-1 mt-8">
+                                <button class="btn btn-active btn-accent w-full">افزودن</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="p-4 bg-gray-38 w-full rounded-xl mt-10">
+                <h2 class="font-fedra mb-2 text-xl">سوالات</h2>
+                <div class="overflow-x-auto">
+                    <table class="table text-right">
+                        <!-- head -->
+                        <thead>
+                            <tr>
+                                <th>ردیف</th>
+                                <th>نام سوال</th>
+                                <th>نام دسته بندی</th>
+                                <th>ایجاد کننده</th>
+                                <th>تاریخ ایجاد</th>
+                                <th>مشاهده گزینه ها</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover">
+                                <th>1</th>
+                                <td>تست</td>
+                                <td>تستی</td>
+                                <td>تست</td>
+                                <td>تستی</td>
+                                <td>
+                                    <label for="my_modal_1" class="cursor-pointer text-accent">مشاهده</label>
+                                </td>
+                                <input type="checkbox" id="my_modal_1" class="modal-toggle" />
+                                <div class="modal" role="dialog">
+                                    <div class="modal-box">
+                                        <h3 class="text-lg font-bold">گزینه ها</h3>
+
+                                        <div class="modal-action">
+                                            <label for="my_modal_1"
+                                                class="btn btn-sm btn-circle btn-ghost absolute left-4 top-5"><i
+                                                    class="fi fi-rr-circle-xmark text-lg"></i></label>
+                                        </div>
+                                        <div class="py-2">
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-check-circle -text-success ml-2"></i>
+                                                <span>گزینه یک</span>
+                                            </div>
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-times-hexagon -text-error ml-2"></i>
+                                                <span>گزینه دو</span>
+                                            </div>
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-times-hexagon -text-error ml-2"></i>
+                                                <span>گزینه سه</span>
+                                            </div>
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-times-hexagon -text-error ml-2"></i>
+                                                <span>گزینه چهار</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <label class="modal-backdrop" for="my_modal_1">Close</label>
+                                </div>
+                            </tr>
+                            <tr class="hover">
+                                <th>2</th>
+                                <td>تست</td>
+                                <td>تستی</td>
+                                <td>تست</td>
+                                <td>تستی</td>
+                                <td>
+                                    <label for="my_modal_2" class="cursor-pointer text-accent">مشاهده</label>
+                                </td>
+                                <input type="checkbox" id="my_modal_2" class="modal-toggle" />
+                                <div class="modal" role="dialog">
+                                    <div class="modal-box">
+                                        <h3 class="text-lg font-bold">گزینه ها</h3>
+
+                                        <div class="modal-action">
+                                            <label for="my_modal_2"
+                                                class="btn btn-sm btn-circle btn-ghost absolute left-4 top-5"><i
+                                                    class="fi fi-rr-circle-xmark text-lg"></i></label>
+                                        </div>
+                                        <div class="py-2">
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-check-circle -text-success ml-2"></i>
+                                                <span>گزینه یک</span>
+                                            </div>
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-times-hexagon -text-error ml-2"></i>
+                                                <span>گزینه دو</span>
+                                            </div>
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-times-hexagon -text-error ml-2"></i>
+                                                <span>گزینه سه</span>
+                                            </div>
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-times-hexagon -text-error ml-2"></i>
+                                                <span>گزینه چهار</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <label class="modal-backdrop" for="my_modal_2">Close</label>
+                                </div>
+                            </tr>
+                            <tr class="hover">
+                                <th>3</th>
+                                <td>تست</td>
+                                <td>تستی</td>
+                                <td>تست</td>
+                                <td>تستی</td>
+                                <td>
+                                    <label for="my_modal_3" class="cursor-pointer text-accent">مشاهده</label>
+                                </td>
+                                <input type="checkbox" id="my_modal_3" class="modal-toggle" />
+                                <div class="modal" role="dialog">
+                                    <div class="modal-box">
+                                        <h3 class="text-lg font-bold">گزینه ها</h3>
+
+                                        <div class="modal-action">
+                                            <label for="my_modal_3"
+                                                class="btn btn-sm btn-circle btn-ghost absolute left-4 top-5"><i
+                                                    class="fi fi-rr-circle-xmark text-lg"></i></label>
+                                        </div>
+                                        <div class="py-2">
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-check-circle -text-success ml-2"></i>
+                                                <span>گزینه یک</span>
+                                            </div>
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-times-hexagon -text-error ml-2"></i>
+                                                <span>گزینه دو</span>
+                                            </div>
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-times-hexagon -text-error ml-2"></i>
+                                                <span>گزینه سه</span>
+                                            </div>
+                                            <div class="flex items-center mb-2">
+                                                <i class="fi fi-sr-times-hexagon -text-error ml-2"></i>
+                                                <span>گزینه چهار</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <label class="modal-backdrop" for="my_modal_3">Close</label>
+                                </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/forms.js"></script>
+    <script src="/assets/js/accordion.js"></script>
+</body>
+
+</html>
