@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <main class="lg:flex w-full lg:p-0">
+    <header>
         <button class="pr-4 pt-5" onclick="handlemenu()"><i class="fi fi-sr-bars-staggered text-2xl"></i></button>
         <div id="backdrop-menu" onclick="handlemenu()"
             class="fixed top-0 right-0 bg-black bg-opacity-50 w-screen h-screen lg:hidden hidden z-10"></div>
@@ -43,12 +43,15 @@
                     </a>
             </ul>
         </nav>
-        <div class="p-3 lg:w-10/12 w-full mr-auto">
-            <div class="lg:w-11/12 w-full mx-auto">
+    </header>
+    <main class="lg:w-10/12 mr-auto">
+        
+        <section class="p-3 ">
+            <div class="w-full">
                 <a href="/pages/player/single-question.html"
                     class="btn btn-active btn-primary lg:w-1/2 w-full text-white">پاسخ به سوال جدید</a>
             </div>
-            <div class="lg:w-11/12 w-full mx-auto p-4 mt-5 bg-gray-38 rounded-xl">
+            <div class="p-4 mt-5 bg-gray-38 rounded-xl">
                 <h2 class="font-fedra mb-2 text-xl">سوالات پاسخ داده شده</h2>
                 <div class="w-full lg:pe-1 mt-2 check-input relative">
                     <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
@@ -175,7 +178,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <script src="/assets/js/main.js"></script>

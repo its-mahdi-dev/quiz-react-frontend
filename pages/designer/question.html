@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <main class="lg:flex w-full lg:p-0">
+    <header>
         <button class="pr-4 pt-5" onclick="handlemenu()"><i class="fi fi-sr-bars-staggered text-2xl"></i></button>
         <div id="backdrop-menu" onclick="handlemenu()"
             class="fixed top-0 right-0 bg-black bg-opacity-50 w-screen h-screen lg:hidden hidden z-10"></div>
@@ -43,11 +43,18 @@
                 </li>
             </ul>
         </nav>
-        <div class="p-3 lg:w-10/12 w-full mr-auto">
-            <div class="w-11/12 mx-auto my-3">
+    </header>
+    <main class="lg:w-10/12 mr-auto">
+        <section class="p-3">
+            <div class="my-3">
                 <div class="accordion-custom bg-gray-38 rounded-xl transition-all duration-300 p-3 overflow-hidden">
                     <input type="checkbox" name="" class="hidden" id="create-question">
-                    <label for="create-question" class="p-4 block text-xl cursor-pointer">ایجاد سوال</label>
+                    <label for="create-question" class="flex justify-between items-center cursor-pointer">
+                        <span class="p-4 text-xl">ایجاد سوال</span>
+                        <div class="arrow transition-all duration-300">
+                            <i class="fi fi-rr-angle-down text-white"></i>
+                        </div>
+                    </label>
                     <div class="accordion-body transition-all duration-300 max-h-0 overflow-hidden pt-3">
                         <form action="create" class="flex flex-wrap">
                             <div class="w-full lg:pe-1 mt-2 check-input relative">
@@ -130,14 +137,14 @@
                         <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
                         <div
                             class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
-                            <input type="text" data-validations="" class="text-input" id="search"/>
+                            <input type="text" data-validations="" class="text-input" id="search" />
                             <label>جستجو بر اسا متن سوال</label>
                             <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
                             <i class="fi fi-sr-exclamation -text-error hidden success-icon"></i>
                         </div>
                     </div>
                     <div class="overflow-x-auto">
-                        <table class="table text-right able-search"  data-index="0" data-input="search">
+                        <table class="table text-right able-search" data-index="0" data-input="search">
                             <!-- head -->
                             <thead>
                                 <tr>
@@ -281,7 +288,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/forms.js"></script>
