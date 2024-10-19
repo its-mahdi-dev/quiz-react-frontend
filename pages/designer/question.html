@@ -126,8 +126,18 @@
 
                 <div class="p-4 bg-gray-38 w-full rounded-xl mt-10">
                     <h2 class="font-fedra mb-2 text-xl">سوالات</h2>
+                    <div class="w-full lg:pe-1 mt-2 check-input relative">
+                        <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
+                        <div
+                            class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                            <input type="text" data-validations="" class="text-input" id="search"/>
+                            <label>جستجو بر اسا متن سوال</label>
+                            <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
+                            <i class="fi fi-sr-exclamation -text-error hidden success-icon"></i>
+                        </div>
+                    </div>
                     <div class="overflow-x-auto">
-                        <table class="table text-right">
+                        <table class="table text-right able-search"  data-index="0" data-input="search">
                             <!-- head -->
                             <thead>
                                 <tr>
@@ -276,6 +286,7 @@
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/forms.js"></script>
     <script src="/assets/js/accordion.js"></script>
+    <script src="/assets/js/table.js"></script>
 </body>
 
 </html>
