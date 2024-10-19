@@ -30,3 +30,72 @@ const handlemenu = () =>{
         backdrop.classList.add("hidden");
     }
 }
+
+
+    // Function to generate a random purple shade
+    function getRandomPurple() {
+        const purpleShades = [
+          '#9b5de5', '#f15bb5', '#7400b8', '#6930c3', '#4a4e69', '#c77dff'
+        ];
+        return purpleShades[Math.floor(Math.random() * purpleShades.length)];
+      }
+  
+      // Function to create a half-circle at a specific position
+      function createHalfCircle(position, side, isCenter = false) {
+        const circle = document.createElement('div');
+        const size = 400; // Fixed size for each circle
+        const posY = position; // Position down the page
+  
+        circle.classList.add('half-circle');
+        circle.style.width = `${size}px`;
+        circle.style.height = `${size / 2}px`; // Half height for the half-circle
+        circle.style.top = `${posY}px`;
+  
+        // Adjust circle position based on side or if it's center
+        if (isCenter) {
+          circle.style.left = '50%';
+          circle.style.transform = 'translateX(-50%)'; // Center horizontally
+        } else if (side === 'left') {
+          circle.style.left = `-${size / 2}px`; // Half circle off the left edge
+        } else {
+          circle.style.right = `-${size / 2}px`; // Half circle off the right edge
+        }
+  
+        circle.style.background = `linear-gradient(135deg, ${getRandomPurple()}, ${getRandomPurple()})`;
+        document.body.appendChild(circle);
+      }
+  
+      // Function to generate half-circles in an alternating pattern
+      function generateHalfCirclesInOrder() {
+        const totalCircles = Math.floor(window.innerHeight / 200); // Based on height
+        let currentY = 0;
+        let isLeft = true;
+  
+        for (let i = 0; i < totalCircles; i++) {
+          const side = isLeft ? 'left' : 'right'; // Alternate between left and right
+          createHalfCircle(currentY, side);
+          currentY += 200; // Move 200px down for each circle
+          isLeft = !isLeft; // Toggle between left and right
+        }
+      }
+  
+      // Function to generate center half-circles if screen width > 992px
+      function generateCenterCircles() {
+        if (window.innerWidth > 992) {
+          const totalCircles = Math.floor(window.innerHeight / 400); // Fewer center circles
+          let currentY = 100; // Start slightly lower
+  
+          for (let i = 0; i < totalCircles; i++) {
+            createHalfCircle(currentY, null, true); // Generate center circles
+            currentY += 400; // Space them out more
+          }
+        }
+      }
+  
+      // Generate circles on page load
+      window.onload = () => {
+        generateHalfCirclesInOrder();
+        generateCenterCircles(); // Add center circles for larger screens
+      };
+  
+     

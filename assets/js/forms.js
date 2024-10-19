@@ -51,6 +51,7 @@ const englishLetter = /[a-zA-Z]/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const checkInput = (val, validations, label) => {
   let errorMessage = "";
+  label = label.replace("*" , "")
   if (validations.required && (!val || val.length == 0))
     return `تکمیل فیلد ${label} الزامیست`;
 

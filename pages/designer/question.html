@@ -11,8 +11,7 @@
     <link rel='stylesheet' href='/assets/css/lib/uicons-solid-rounded.css'>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- META TAGS -->
-    <meta name="description"
-        content="صفحه سوالات سامانه کوییز | نمایش سوال های پاسخ داده شده و پاسخ به سوال جدید" />
+    <meta name="description" content="صفحه سوالات سامانه کوییز | نمایش سوال های پاسخ داده شده و پاسخ به سوال جدید" />
     <meta itemprop="name" content="صفحه سوالات بازیکن" />
     <meta itemprop="author" content="Mahdi Rasoulzade" />
     <meta name="keywords" content="کوییز,سوالات">
@@ -22,7 +21,7 @@
     <meta name="twitter:url" content="https://itsmahdi.com" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:description"
-        content="صفحه سوالات سامانه کوییز | نمایش سوال های پاسخ داده شده و پاسخ به سوال جدید"/>
+        content="صفحه سوالات سامانه کوییز | نمایش سوال های پاسخ داده شده و پاسخ به سوال جدید" />
     <meta name="twitter:title" content="Mahdi Rasoulzade fullstack developer" />
     <meta property="twitter:image" content="/assets/images/favicon/180.png">
     <meta name="twitter:domain" content="itsmahdi.com">
@@ -31,7 +30,7 @@
     <!--OPEN GRAPH / FACEBOOK-->
     <meta property="og:url" content="https://itsmahdi.com" />
     <meta property="og:description"
-        content="صفحه سوالات سامانه کوییز | نمایش سوال های پاسخ داده شده و پاسخ به سوال جدید"/>
+        content="صفحه سوالات سامانه کوییز | نمایش سوال های پاسخ داده شده و پاسخ به سوال جدید" />
     <meta property="og:locale" content="fa_IR">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/assets/images/favicon/180.png">
@@ -55,10 +54,11 @@
 
 <body>
     <header>
-        <button class="pr-4 pt-5" onclick="handlemenu()"><i class="fi fi-sr-bars-staggered text-2xl"></i></button>
+        <button class="pr-4 pt-5 lg:hidden" onclick="handlemenu()"><i
+                class="fi fi-sr-bars-staggered text-2xl"></i></button>
         <div id="backdrop-menu" onclick="handlemenu()"
             class="fixed top-0 right-0 bg-black bg-opacity-50 w-screen h-screen lg:hidden hidden z-10"></div>
-        <nav class="bg-gray-20 p-3 md:w-2/12 w-1/2 h-screen fixed lg:right-0 right-[-100%] top-0 transition-all duration-300 z-20"
+        <nav class="bg-gray-20 bg-opacity-45 backdrop-blur-3xl p-3 md:w-2/12 w-1/2 h-[90vh] fixed lg:right-0 right-[-100%] top-[5%] rounded-l-2xl shadow-lg transition-all duration-300 z-20"
             id="menu">
             <div class="text-center font-fedra text-2xl mt-5">
                 سایت کوییز
@@ -85,10 +85,11 @@
             </ul>
         </nav>
     </header>
-    <main class="lg:w-10/12 mr-auto">
+    <main class="lg:w-10/12 mr-auto pt-6">
         <section class="p-3">
             <div class="my-3">
-                <div class="accordion-custom bg-gray-38 rounded-xl transition-all duration-300 p-3 overflow-hidden">
+                <div
+                    class="accordion-custom bg-gray-38 bg-opacity-35 backdrop-blur-2xl shadow-lg rounded-xl transition-all duration-300 p-3 overflow-hidden">
                     <input type="checkbox" name="" class="hidden" id="create-question">
                     <label for="create-question" class="flex justify-between items-center cursor-pointer">
                         <span class="p-4 text-xl">ایجاد سوال</span>
@@ -101,7 +102,7 @@
                             <div class="w-full lg:pe-1 mt-2 check-input relative">
                                 <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
                                 <div
-                                    class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                    class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-20 shadow-lg backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
                                     <input type="text" data-validations="required" class="text-input" />
                                     <label>شرح سوال </label>
                                     <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
@@ -114,7 +115,7 @@
                                     <div class="flex items-center">
                                         <input type="radio" name="radio-5" class="radio radio-success ml-2" />
                                         <div
-                                            class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                            class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-20 shadow-lg backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
                                             <input type="text" data-validations="required" class="text-input" />
                                             <label>گزینه یک</label>
                                             <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
@@ -127,7 +128,7 @@
                                     <div class="flex items-center">
                                         <input type="radio" name="radio-5" class="radio radio-success ml-2" />
                                         <div
-                                            class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                            class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-20 shadow-lg backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
                                             <input type="text" data-validations="required" class="text-input" />
                                             <label>گزینه دو</label>
                                             <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
@@ -140,7 +141,7 @@
                                     <div class="flex items-center">
                                         <input type="radio" name="radio-5" class="radio radio-success ml-2" />
                                         <div
-                                            class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                            class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-20 shadow-lg backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
                                             <input type="text" data-validations="required" class="text-input" />
                                             <label>گزینه سه</label>
                                             <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
@@ -153,7 +154,7 @@
                                     <div class="flex items-center">
                                         <input type="radio" name="radio-5" class="radio radio-success ml-2" />
                                         <div
-                                            class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                            class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-20 shadow-lg backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
                                             <input type="text" data-validations="required" class="text-input" />
                                             <label>گزینه چهار</label>
                                             <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
@@ -172,14 +173,14 @@
                 </div>
 
 
-                <div class="p-4 bg-gray-38 w-full rounded-xl mt-10">
+                <div class="p-4 bg-gray-38 bg-opacity-35 backdrop-blur-2xl shadow-lg w-full rounded-xl mt-10">
                     <h2 class="font-fedra mb-2 text-xl">سوالات</h2>
                     <div class="w-full lg:pe-1 mt-2 check-input relative">
                         <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
                         <div
-                            class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-50 backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                            class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-20 backdrop-blur-2xl shadow-lg p-2 flex items-center justify-between -border-error">
                             <input type="text" data-validations="" class="text-input" id="search" />
-                            <label>جستجو بر اسا متن سوال</label>
+                            <label>جستجو بر اساس متن سوال</label>
                             <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
                             <i class="fi fi-sr-exclamation -text-error hidden success-icon"></i>
                         </div>
