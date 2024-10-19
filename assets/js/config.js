@@ -9,6 +9,7 @@ tailwind.config = {
 				'base--black': '#121212',
 				'base--gray': '#292929',
 				'gray-38': '#383838',
+				'gray-20': '#202020',
 				'gray-40': '#404040',
 				'gray-A8': "#A8A8A8",
 				'gray-AE': '#AEAEAE',
