@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>امتیازات</title>
+    <link rel="stylesheet" href="/assets/css/lib/daisyui.min.css">
+    <script src="/assets/js/lib/tailwind.min.js"></script>
+    <script src="/assets/js/config.js"></script>
+    <link rel='stylesheet' href='/assets/css/lib/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='/assets/css/lib/uicons-solid-rounded.css'>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <main class="lg:flex w-full lg:p-0">
+        <button class="pr-4 pt-5" onclick="handlemenu()"><i class="fi fi-sr-bars-staggered text-2xl"></i></button>
+        <div id="backdrop-menu" onclick="handlemenu()"
+            class="fixed top-0 right-0 bg-black bg-opacity-50 w-screen h-screen lg:hidden hidden z-10"></div>
+        <nav class="bg-gray-20 p-3 md:w-2/12 w-1/2 h-screen fixed lg:right-0 right-[-100%] top-0 transition-all duration-300 z-20"
+            <div class="text-center font-fedra text-2xl mt-5">
+            سایت کوییز
+            </div>
+            <ul class="menu rounded-box mt-20">
+                <li class="mb-3">
+                    <a href="#">
+                        <i class="fi fi-rr-home"></i>
+                        داشبورد
+                    </a>
+                </li>
+                </li>
+                <li class="mb-3">
+                    <a href="/pages/player/questions.html">
+                        <i class="fi fi-rr-question-square"></i>
+                        سوالات
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="/pages/player/scores.html">
+                        <i class="fi fi-rr-medal"></i>
+                        امتیازات
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="p-3 lg:w-10/12 w-full mr-auto">
+            <div class="lg:w-11/12 w-full mx-auto p-4 mt-5 bg-gray-38 rounded-xl">
+                <h2 class="font-fedra mb-2 text-xl">سوال</h2>
+                <div class="mt-8">
+                    <span class="text-xl font-bold">متن سوال</span>
+                    <p class="mt-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                        گرافیک است.</p>
+                </div>
+                <div class="mt-8">
+                    <span class="text-xl font-bold">گزینه ها</span>
+                    <form action="create" class="flex flex-col mt-3" onsubmit="sunbitAnswer(this , event)">
+                        <div class="flex items-center mb-2">
+                            <input type="radio" name="radio-5" id="first" value="1" class="radio radio-success ml-2" />
+                            <label for="first">گزینه یک</label>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <input type="radio" name="radio-5" id="second" value="2" class="radio radio-success ml-2" />
+                            <label for="second">گزینه دو</label>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <input type="radio" name="radio-5" id="third" value="3" class="radio radio-success ml-2" />
+                            <label for="third">گزینه سه</label>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <input type="radio" name="radio-5" id="fourth" value="4" class="radio radio-success ml-2" />
+                            <label for="fourth">گزینه چهار</label>
+                        </div>
+
+                        <div class="w-full">
+                            <div class="lg:w-1/2 w-full lg:pe-1 mt-8">
+                                <button class="btn btn-active btn-accent w-full submit-btn" type="submit">ثبت
+                                    پاسخ</button>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/forms.js"></script>
+    <script src="/assets/js/question.js"></script>
+</body>
+
+</html>

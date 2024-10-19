@@ -38,8 +38,8 @@ for (let i = 0; i < allCheckInputs.length; i++) {
       inpBox
         .getElementsByClassName("-border-error")[0]
         .classList.remove("border");
-        errorIcon.classList.remove("hidden");
-        successIcon.classList.add("hidden");
+      errorIcon.classList.remove("hidden");
+      successIcon.classList.add("hidden");
     }
     if (inp.value.length > 0) label.classList.add("active");
     else label.classList.remove("active");

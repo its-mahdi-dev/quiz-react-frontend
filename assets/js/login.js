@@ -71,24 +71,7 @@ function setTransition(event) {
   }, tiltEffectSettings.speed);
 }
 
-let first_name, last_name, test1, test2;
-let submitButton;
-function handleSubmitButton(node) {
-  submitButton = node;
-}
-const sendData = () => {
-  console.log("ppppp");
-  let validation = true;
-  Object.keys(error).forEach((err) => {
-    if (error[err] == true || error[err] == null) {
-      validation = false;
-      error[err] = true;
-    }
-  });
-  if (!validation) return;
 
-  submitButton.innerHTML = `<span class="loading loading-dots loading-md"></span>`;
-};
 
 
 const toggleForm = (el)=>{
