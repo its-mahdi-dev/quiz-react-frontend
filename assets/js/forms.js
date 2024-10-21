@@ -16,7 +16,7 @@ for (let i = 0; i < allCheckInputs.length; i++) {
   let inp = inpBox.getElementsByClassName("text-input")[0];
   inp.setAttribute(
     "class",
-    "w-full border-none bg-transparent outline-none text-sm pt-2 ml-auto"
+    "w-full border-none bg-transparent outline-none text-sm pt-2 ml-auto text-input"
   );
   let validations = getValidations(inp);
   let errorMsg = "";
@@ -49,20 +49,19 @@ const persianLetters = /^[\u0600-\u06FF\s]+$/;
 const numbers = /^[\u06F0-\u06F90-9]+$/;
 const englishLetter = /[a-zA-Z]/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const checkInput = (val, validations, label) => {
-  let errorMessage = "";
-  label = label.replace("*" , "")
+const checkInput = (val, validations, lab) => {
+  let label = lab.replace("*", "");
   if (validations.required && (!val || val.length == 0))
     return `تکمیل فیلد ${label} الزامیست`;
 
   if (validations.persian) {
     if (!persianLetters.test(val) && val.length > 0)
-      return "مقدار را به فارسی وارد کنید";
+      return `مقدار ${label} را به فارسی وارد کنید`;
   } else if (validations.number) {
     if (!numbers.test(val) && val.length > 0) return "فقط عدد وارد کنید";
   } else if (validations.english) {
     if (!englishLetter.test(val) && val.length > 0)
-      return "مقدار را به انگلیسی وارد کنید";
+      return `مقدار ${label} را به انگلیسی وارد کنید`;
   } else if (validations.email) {
     if (!emailRegex.test(val) && val.length > 0)
       return `ایمیل خود را به درستی وارد کنید`;
@@ -89,19 +88,19 @@ for (let i = 0; i < allCheckForms.length; i++) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     let inputs = allCheckForms[i].getElementsByClassName("check-input");
-    let hasError = false;
+    let errMsg = "";
     for (let j = 0; j < inputs.length; j++) {
       let inp = inputs[j].getElementsByClassName("text-input")[0];
-      console.log(inp.value);
-      let errMsg = checkInput(
+      errMsg = checkInput(
         inp.value,
         getValidations(inp),
-        inputs[j].getElementsByTagName("label")[0]
+        inputs[j].getElementsByTagName("label")[0].textContent
       );
-      if (errMsg != "") {
-        hasError = true;
-      }
+      let label = inputs[j].getElementsByTagName("label")[0];
+      if (inp.value.length > 0) label.classList.add("active");
+      else label.classList.remove("active");
     }
-    if (!hasError) form.submit();
+    if (errMsg == "") form.submit();
+    else form.getElementsByClassName("form-error")[0].textContent = errMsg;
   });
 }

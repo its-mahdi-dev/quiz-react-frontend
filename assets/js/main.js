@@ -43,7 +43,7 @@ const handlemenu = () =>{
       // Function to create a half-circle at a specific position
       function createHalfCircle(position, side, isCenter = false) {
         const circle = document.createElement('div');
-        const size = 400; // Fixed size for each circle
+        const size = window.innerWidth > 992 ? 300 : 200; // Fixed size for each circle
         const posY = position; // Position down the page
   
         circle.classList.add('half-circle');
@@ -56,9 +56,9 @@ const handlemenu = () =>{
           circle.style.left = '50%';
           circle.style.transform = 'translateX(-50%)'; // Center horizontally
         } else if (side === 'left') {
-          circle.style.left = `-${size / 2}px`; // Half circle off the left edge
+          circle.style.left = `0`; // Half circle off the left edge
         } else {
-          circle.style.right = `-${size / 2}px`; // Half circle off the right edge
+          circle.style.right = `0`; // Half circle off the right edge
         }
   
         circle.style.background = `linear-gradient(135deg, ${getRandomPurple()}, ${getRandomPurple()})`;
