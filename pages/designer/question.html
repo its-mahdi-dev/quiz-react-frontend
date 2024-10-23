@@ -9,6 +9,7 @@
     <script src="/assets/js/config.js"></script>
     <link rel='stylesheet' href='/assets/css/lib/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='/assets/css/lib/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='/assets/css/lib/jalalidatepicker.min.css'>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- META TAGS -->
     <meta name="description" content="صفحه سوالات سامانه کوییز | نمایش سوال های پاسخ داده شده و پاسخ به سوال جدید" />
@@ -163,6 +164,29 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="flex flex-wrap w-full mt-4">
+                                <div class="w-full lg:w-1/2 lg:pe-1 mt-2 check-input relative">
+                                    <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
+                                    <div
+                                        class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-20 shadow-lg backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                        <input type="text" data-validations="required,number" class="text-input" />
+                                        <label>مدت زمان پاسخگویی (به ثانیه)</label>
+                                        <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
+                                        <i class="fi fi-sr-exclamation -text-error hidden success-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="w-full lg:w-1/2 lg:pe-1 mt-2 check-input relative">
+                                    <span class="mb-1 -text-error text-xs error-message absolute -top-4"></span>
+                                    <div
+                                        class="w-full h-12 rounded-lg bg-gray-700 bg-opacity-20 shadow-lg backdrop-blur-2xl p-2 flex items-center justify-between -border-error">
+                                        <input type="text" data-validations="required,number" class="text-input"
+                                            data-jdp data-jdp-min-date="1350/01/01" data-jdp-max-date="1407/01/01" />
+                                        <label>تاریخ شروع سوال</label>
+                                        <i class="fi fi-sr-check-circle -text-success hidden error-icon"></i>
+                                        <i class="fi fi-sr-exclamation -text-error hidden success-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
                             <span class="-text-error form-error mt-4 block text-center w-full"></span>
                             <div class="w-full">
                                 <div class="lg:w-1/2 w-full lg:pe-1 mt-8">
@@ -192,11 +216,13 @@
                             <thead>
                                 <tr>
                                     <th>ردیف</th>
-                                    <th>نام سوال</th>
+                                    <th>متن سوال</th>
                                     <th>نام دسته بندی</th>
                                     <th>ایجاد کننده</th>
                                     <th>تاریخ ایجاد</th>
-                                    <th>مشاهده گزینه ها</th>
+                                    <th>تاریخ شروع</th>
+                                    <th>مدت زمان پاسخگویی</th>
+                                    <th>مشاهده کامل</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -206,13 +232,20 @@
                                     <td>تستی</td>
                                     <td>تست</td>
                                     <td>تستی</td>
+                                    <td>تستی</td>
+                                    <td>تستی</td>
                                     <td>
                                         <label for="my_modal_1" class="cursor-pointer text-accent">مشاهده</label>
                                     </td>
                                     <input type="checkbox" id="my_modal_1" class="modal-toggle" />
-                                    <div class="modal" role="dialog">
+                                    <div class="modal overflow-y-visible" role="dialog">
                                         <div class="modal-box">
-                                            <h3 class="text-lg font-bold">گزینه ها</h3>
+                                            <h3 class="text-lg font-bold">متن سوال</h3>
+                                            <p> لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم
+                                                لورم
+                                                ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم </p>
+
+                                            <h3 class="text-lg font-bold mt-6">گزینه ها</h3>
 
                                             <div class="modal-action">
                                                 <label for="my_modal_1"
@@ -248,13 +281,20 @@
                                     <td>تستی</td>
                                     <td>تست</td>
                                     <td>تستی</td>
+                                    <td>تستی</td>
+                                    <td>تستی</td>
                                     <td>
                                         <label for="my_modal_2" class="cursor-pointer text-accent">مشاهده</label>
                                     </td>
                                     <input type="checkbox" id="my_modal_2" class="modal-toggle" />
-                                    <div class="modal" role="dialog">
+                                    <div class="modal overflow-y-visible" role="dialog">
                                         <div class="modal-box">
-                                            <h3 class="text-lg font-bold">گزینه ها</h3>
+                                            <h3 class="text-lg font-bold">متن سوال</h3>
+                                            <p> لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم
+                                                لورم
+                                                ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم </p>
+
+                                            <h3 class="text-lg font-bold mt-6">گزینه ها</h3>
 
                                             <div class="modal-action">
                                                 <label for="my_modal_2"
@@ -290,13 +330,20 @@
                                     <td>تستی</td>
                                     <td>تست</td>
                                     <td>تستی</td>
+                                    <td>تستی</td>
+                                    <td>تستی</td>
                                     <td>
                                         <label for="my_modal_3" class="cursor-pointer text-accent">مشاهده</label>
                                     </td>
                                     <input type="checkbox" id="my_modal_3" class="modal-toggle" />
-                                    <div class="modal" role="dialog">
+                                    <div class="modal overflow-y-visible" role="dialog">
                                         <div class="modal-box">
-                                            <h3 class="text-lg font-bold">گزینه ها</h3>
+                                            <h3 class="text-lg font-bold">متن سوال</h3>
+                                            <p> لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم
+                                                لورم
+                                                ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم </p>
+
+                                            <h3 class="text-lg font-bold mt-6">گزینه ها</h3>
 
                                             <div class="modal-action">
                                                 <label for="my_modal_3"
@@ -337,6 +384,14 @@
     <script src="/assets/js/forms.js"></script>
     <script src="/assets/js/accordion.js"></script>
     <script src="/assets/js/table.js"></script>
+    <script src="/assets/js/lib/jalali.min.js"></script>
+    <script>
+        jalaliDatepicker.startWatch({
+				maxDate: "attr",
+				minDate: 'attr',
+                time: true
+			});
+    </script>
 </body>
 
 </html>

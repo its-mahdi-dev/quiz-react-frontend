@@ -25,6 +25,10 @@ for (let i = 0; i < allCheckInputs.length; i++) {
   if (validationsSplit.includes("required")) {
     label.textContent += " *";
   }
+  inp.onchange = () => {
+    if (inp.value.length > 0) label.classList.add("active");
+    else label.classList.remove("active");
+  };
   inp.onkeyup = () => {
     errorMsg = checkInput(inp.value, validations, label.textContent);
     inpBox.getElementsByClassName("error-message")[0].textContent = errorMsg;
